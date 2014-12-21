@@ -32,12 +32,12 @@ input, textarea  {
     -webkit-user-select: text ; -moz-user-select: text ; -ms-user-select: text ; user-select: text ;
 }
 
-body {
-    /* margin: 0.5rem ; */
-    background: white ;
-    color: black ;
-}
-
 .align-center {
     text-align: center ;
+}
+
+.paddingdiv {
+    padding-top: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
 }
