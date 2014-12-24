@@ -1,7 +1,3 @@
-/*
- * Please see the included README.md file for license terms and conditions.
- */
-
 /* Disable certain interactions on touch devices */
 /* SOURCE: https://github.com/ftlabs/fastclick/blob/master/examples/input.html */
 /* LICENSE: https://github.com/ftlabs/fastclick/blob/master/LICENSE */
@@ -12,6 +8,7 @@ body {
     -webkit-highlight: none ;
     -webkit-tap-highlight-color: rgba(0,0,0,0) ;
     -webkit-tap-highlight-color: transparent ;      /* For some Androids */
+    font-family: "Microsoft Yahei";
 }
 
 /* Recommended for Windows 8 Phone */
@@ -27,17 +24,132 @@ body {
     -ms-content-zooming: none ;
 }
 
-/* allow copy-paste */
-input, textarea  {
-    -webkit-user-select: text ; -moz-user-select: text ; -ms-user-select: text ; user-select: text ;
-}
-
 .align-center {
     text-align: center ;
 }
 
-.paddingdiv {
-    padding-top: 20px;
+table.imagetable {
+    font-size:1.0em;
+    border-width: 1px;
+    border-color: #ccc;
+    border-collapse: collapse;
+}
+
+table.imagetable th {
+    background-image: -webkit-linear-gradient(#009deb 0%, #0088d1);
+    background-image: -o-linear-gradient(#009deb 0%, #0088d1);
+    background-image: linear-gradient(#009deb 0%, #0088d1);
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #0088D1;
+    border-top-color: #009deb;
+    color: #FFF;
+}
+table.imagetable tbody tr td {
+    background-image: -webkit-linear-gradient(#fff 0%, #e6e6e6 100%);
+    background-image: -o-linear-gradient(#fff 0%, #e6e6e6 100%);
+    background-image: linear-gradient(#fff 0%, #e6e6e6 100%);
+    border-width: 1px;
+    padding: 8px;
+    border-style: solid;
+    border-color: #e6e6e6;
+}
+
+div.aside {
+    padding-top: 50px;
     padding-left: 10px;
     padding-right: 10px;
+    vertical-align: middle;
 }
+
+div.aside div.title {
+    font-size:1.4em;
+    padding-top:10px;
+}
+
+div.aside div.poweredby {
+    padding-top:15px;
+}
+
+div.aside div.content {
+    padding-top:15px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    text-indent: 2em;
+}
+
+div.paddingdiv {
+    padding-top: 10px;
+}
+
+ul li div {
+    margin-top: -8px;
+    float: left;
+}
+
+div.spif_ul_itemname {
+    width: 100px;
+    text-align: center;
+    font-size: 1.1em;
+    font-weight: bold;
+    padding-left: 8px;
+}
+
+div.spif_ul_itemvalue {
+    font-style: 1.3em;
+    padding-left: 20px;
+}
+
+table.imagetable tbody tr td.Red0{background:-webkit-linear-gradient( #FFFFFF 0%, #FCF7FA 100%); color:#FF0000}
+table.imagetable tbody tr td.Red1{background:-webkit-linear-gradient( #FFFFFF 0%, #FCF1F4 100%); color:#FF0000}
+table.imagetable tbody tr td.Red2{background:-webkit-linear-gradient( #FFFFFF 0%, #FCEBEE 100%); color:#FF0000}
+table.imagetable tbody tr td.Red3{background:-webkit-linear-gradient( #FFFFFF 0%, #FCE5E8 100%); color:#FF0000}
+table.imagetable tbody tr td.Red4{background:-webkit-linear-gradient( #FFFFFF 0%, #FCDFE2 100%); color:#FF0000}
+table.imagetable tbody tr td.Red5{background:-webkit-linear-gradient( #FFFFFF 0%, #FCD9DC 100%); color:#FF0000}
+table.imagetable tbody tr td.Red6{background:-webkit-linear-gradient( #FFFFFF 0%, #FBD3D6 100%); color:#FF0000}
+table.imagetable tbody tr td.Red7{background:-webkit-linear-gradient( #FFFFFF 0%, #FBCDD0 100%); color:#FF0000}
+table.imagetable tbody tr td.Red8{background:-webkit-linear-gradient( #FFFFFF 0%, #FBC8CA 100%); color:#FF0000}
+table.imagetable tbody tr td.Red9{background:-webkit-linear-gradient( #FFFFFF 0%, #FBC2C4 100%); color:#FF0000}
+table.imagetable tbody tr td.Red10{background:-webkit-linear-gradient(#FCF7FA 0%, #FBBCBE 100%); color:#FF0000}
+table.imagetable tbody tr td.Red11{background:-webkit-linear-gradient(#FCF1F4 0%, #FBB6B8 100%); color:#FF0000}
+table.imagetable tbody tr td.Red12{background:-webkit-linear-gradient(#FCEBEE 0%, #FAB0B3 100%); color:#FF0000}
+table.imagetable tbody tr td.Red13{background:-webkit-linear-gradient(#FCE5E8 0%, #FAAAAD 100%); color:#FF0000}
+table.imagetable tbody tr td.Red14{background:-webkit-linear-gradient(#FCDFE2 0%, #FAA4A7 100%); color:#FF0000}
+table.imagetable tbody tr td.Red15{background:-webkit-linear-gradient(#FCD9DC 0%, #FA9EA1 100%); color:#FF0000}
+table.imagetable tbody tr td.Red16{background:-webkit-linear-gradient(#FBD3D6 0%, #FA999B 100%); color:#FF0000}
+table.imagetable tbody tr td.Red17{background:-webkit-linear-gradient(#FBCDD0 0%, #FA9395 100%); color:#FF0000}
+table.imagetable tbody tr td.Red18{background:-webkit-linear-gradient(#FBC8CA 0%, #F98D8F 100%); color:#FF0000}
+table.imagetable tbody tr td.Red19{background:-webkit-linear-gradient(#FBC2C4 0%, #F98789 100%); color:#FF0000}
+table.imagetable tbody tr td.Red20{background:-webkit-linear-gradient(#FBBCBE 0%, #F98183 100%); color:#FF0000}
+table.imagetable tbody tr td.Red21{background:-webkit-linear-gradient(#FBB6B8 0%, #F97B7D 100%); color:#FF0000}
+table.imagetable tbody tr td.Red22{background:-webkit-linear-gradient(#FAB0B3 0%, #F97577 100%); color:#FF0000}
+table.imagetable tbody tr td.Red23{background:-webkit-linear-gradient(#FAAAAD 0%, #F96F71 100%); color:#FF0000}
+table.imagetable tbody tr td.Red24{background:-webkit-linear-gradient(#FAA4A7 0%, #F8696B 100%); color:#FF0000}
+
+table.imagetable tbody tr td.Blue0{background:-webkit-linear-gradient( #FFFFFF 0%, #F5F7FC 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue1{background:-webkit-linear-gradient( #FFFFFF 0%, #EFF2FA 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue2{background:-webkit-linear-gradient( #FFFFFF 0%, #E8EEF8 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue3{background:-webkit-linear-gradient( #FFFFFF 0%, #E2E9F5 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue4{background:-webkit-linear-gradient( #FFFFFF 0%, #DBE5F3 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue5{background:-webkit-linear-gradient( #FFFFFF 0%, #D5E0F1 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue6{background:-webkit-linear-gradient( #FFFFFF 0%, #CEDCEF 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue7{background:-webkit-linear-gradient( #FFFFFF 0%, #C8D7EC 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue8{background:-webkit-linear-gradient( #FFFFFF 0%, #C1D2EA 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue9{background:-webkit-linear-gradient( #FFFFFF 0%, #BBCEE8 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue10{background:-webkit-linear-gradient(#F5F7FC 0%, #B4C9E5 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue11{background:-webkit-linear-gradient(#EFF2FA 0%, #AEC5E3 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue12{background:-webkit-linear-gradient(#E8EEF8 0%, #A7C0E1 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue13{background:-webkit-linear-gradient(#E2E9F5 0%, #A1BCDF 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue14{background:-webkit-linear-gradient(#DBE5F3 0%, #9AB7DC 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue15{background:-webkit-linear-gradient(#D5E0F1 0%, #94B3DA 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue16{background:-webkit-linear-gradient(#CEDCEF 0%, #8DAED8 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue17{background:-webkit-linear-gradient(#C8D7EC 0%, #87A9D5 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue18{background:-webkit-linear-gradient(#C1D2EA 0%, #80A5D3 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue19{background:-webkit-linear-gradient(#BBCEE8 0%, #7AA0D1 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue20{background:-webkit-linear-gradient(#B4C9E5 0%, #739CCF 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue21{background:-webkit-linear-gradient(#AEC5E3 0%, #6D97CC 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue22{background:-webkit-linear-gradient(#A7C0E1 0%, #6693CA 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue23{background:-webkit-linear-gradient(#A1BCDF 0%, #608EC8 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue24{background:-webkit-linear-gradient(#9AB7DC 0%, #5A8AC6 100%); color:#0000FF}

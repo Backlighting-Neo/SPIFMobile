@@ -3,14 +3,19 @@
 <html>
 <head>
     <meta charset="UTF-8">
-    <title>SPIF</title>
+    <title>SPIF Mobile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <script src="ui/appframework.ui.min.js"></script>
     <script src="lib/appframework.min.js"></script>
     <script src="lib/af.plugins.min.js"></script>
+    <script src="intelxdk.js"></script>
+    <script src="cordova.js"></script>
+    <script src="xhr.js"></script> 
+    <script src="xdk/init-dev.js"></script>
+
     <script src="lib/desEncrypt.js"></script>
-    <script src="lib/app.js"></script>
+    <script src="js/app.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/icons.min.css">
     <link rel="stylesheet" type="text/css" href="css/af.ui.min.css">
@@ -19,12 +24,12 @@
     <script>
         $.ui.useOSThemes=false;
         $("#afui").get(0).className='android';
+        $.ui.blockPageScroll();
     </script>
 </head>
 <body>
 
     <div id="afui">
-
         <div id="content">
             <footer id="spif_common_footer">
                 <a href="#spif_panel_home" id="spif_nav_home" class="icon home mini">首页</a>
@@ -36,37 +41,171 @@
                 <header>
                     <h1>股指期货多空分析</h1>
                 </header>
+                <div class="paddingdiv" id="spif_home">
+                    <a class="button" onclick="alert(intel.xdk.device.uuid);">IMEI</a>
+                    <a class="button" onclick="intel.xdk.device.scanBarcode();">Barcode</a>
+                </div>
 
             </div>
             <div id="spif_panel_overview" class="panel" data-footer="spif_common_footer">
                 <header>
                     <h1>数据概览</h1>
                 </header>
-                <div style="padding-top: 20px">
+                <div class="paddingdiv" id="spif_data_overview">
                     <ul class="list inset">
-                        <li>【日期】2014年12月20日</li>
-                        <li>【合约】IF1501</li>
-                        <li></li>
+                        <li>
+                            <div class="spif_ul_itemname">日期</div>
+                            <div class="spif_ul_itemvalue">2014年12月22日</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">合约</div>
+                            <div class="spif_ul_itemvalue">IF1412</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">成交量</div>
+                            <div class="spif_ul_itemvalue">000000</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">开仓数</div>
+                            <div class="spif_ul_itemvalue">000000</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">最高点</div>
+                            <div class="spif_ul_itemvalue">0000.0</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">最低点</div>
+                            <div class="spif_ul_itemvalue">0000.0</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">高时间</div>
+                            <div class="spif_ul_itemvalue">00:00:00</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">低时间</div>
+                            <div class="spif_ul_itemvalue">00:00:00</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">开盘</div>
+                            <div class="spif_ul_itemvalue">0000.0</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">当前</div>
+                            <div class="spif_ul_itemvalue">0000.0</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">持仓</div>
+                            <div class="spif_ul_itemvalue">00000</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">历史日期</div>
+                            <div class="spif_ul_itemvalue">0000-00-00</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">仓差</div>
+                            <div class="spif_ul_itemvalue">0000</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">振幅</div>
+                            <div class="spif_ul_itemvalue">00.0</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">涨跌</div>
+                            <div class="spif_ul_itemvalue">00.0</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">多空差</div>
+                            <div class="spif_ul_itemvalue">000</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">多增</div>
+                            <div class="spif_ul_itemvalue">000</div>
+                        </li>
+                        <li>
+                            <div class="spif_ul_itemname">空增</div>
+                            <div class="spif_ul_itemvalue">000</div>
+                        </li>
                     </ul>
                 </div>
             </div>
+
+
             <div id="spif_panel_dataontime" class="panel" data-footer="spif_common_footer">
                 <header>
                     <h1>时间数据</h1>
                 </header>
+                <div class="paddingdiv align-center" id="spif_data_time">
+                    <table width="100%" class="imagetable">
+                        <thead>
+                            <tr>
+                                <th>时间</th>
+                                <th>多空差</th>
+                                <th>增仓</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>00:00</td>
+                                <td class="Red15">0000</td>
+                                <td class="Red5">000</td>
+                            </tr>
+                            <tr>
+                                <td>00:00</td>
+                                <td class="Blue15">-0000</td>
+                                <td class="Blue5">-000</td>
+                            </tr>
+                            <tr>
+                                <td>数据</td>
+                                <td>数据</td>
+                                <td>数据</td>
+                            </tr>
+                            <tr>
+                                <td>数据</td>
+                                <td>数据</td>
+                                <td>数据</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
+
+
             <div id="spif_panel_dataonspace" class="panel" data-footer="spif_common_footer">
                 <header>
                     <h1>空间数据</h1>
                 </header>
+                <div class="paddingdiv align-center" id="spif_data_space">
+                    <table width="100%" class="imagetable">
+                        <thead>
+                            <tr>
+                                <th>点位</th>
+                                <th>多空差</th>
+                                <th>历史</th>
+                                <th>合计</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>数据</td>
+                                <td>数据</td>
+                                <td>数据</td>
+                                <td>数据</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </div>
 
         <aside id="spif_right_sidemenu">
-            <div class="align-center paddingdiv">
-                <img src="image/logo.png" width="50%">
-                <div style="font-size:1.4em; padding-top:10px;">股指期货多空分析</div>
-                <div style="padding-top:20px;">Powered by 逆光</div>
+            <div class="align-center aside">
+                <img src="image/logo.png" width="40%">
+                <div class="title">股指期货多空分析</div>
+                <div class="poweredby">移动触屏版</div>
+                <div class="poweredby">Powered by 逆光</div>
+                <div class="content">
+                    本软件为【易稳股指期货工作室】荣誉出品的针对股指期货多空对比实时分析系统。本系统可以实时分析股指期货时间（1分钟、3分钟）、空间（1点位）的多空对比数据，是大资金日内股指操作的多空绝密情报来源，为操盘者提供重要的决策依据。
+                </div>
             </div>
         </aside>
     </div>
