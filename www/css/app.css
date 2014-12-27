@@ -1,3 +1,7 @@
+/*
+ * Please see the included README.md file for license terms and conditions.
+ */
+
 /* Disable certain interactions on touch devices */
 /* SOURCE: https://github.com/ftlabs/fastclick/blob/master/examples/input.html */
 /* LICENSE: https://github.com/ftlabs/fastclick/blob/master/LICENSE */
@@ -8,7 +12,6 @@ body {
     -webkit-highlight: none ;
     -webkit-tap-highlight-color: rgba(0,0,0,0) ;
     -webkit-tap-highlight-color: transparent ;      /* For some Androids */
-    font-family: "Microsoft Yahei";
 }
 
 /* Recommended for Windows 8 Phone */
@@ -84,6 +87,10 @@ div.paddingdiv {
     padding-top: 10px;
 }
 
+div.content {
+    margin-top: 30px;
+}
+
 ul li div {
     margin-top: -8px;
     float: left;
@@ -100,6 +107,63 @@ div.spif_ul_itemname {
 div.spif_ul_itemvalue {
     font-style: 1.3em;
     padding-left: 20px;
+}
+
+div.loginfooter {
+    line-height: 42px;
+    font-size: 1.3em;
+    color: #FFF;
+    font-weight: bold;
+}
+
+div#spif_panel_login {
+    overflow: hidden;
+}
+
+div#spif_content_login {
+    height: 2000px;
+    background-color: #eeeff3;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+div.ComputerImage {
+    padding-top: 50px;
+}
+
+a.blockbutton {
+    display: block;
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40px;
+    line-height: 20px;
+}
+
+div.occpuying30px {
+    width: 0;
+    height: 30px;
+}
+
+div.overflowhidden {
+    overflow: hidden;
+}
+
+div.backgroundimage {
+    width:100%;
+    height:100%;
+    position:absolute;
+    z-index:-1;
+    top:0px;
+}
+
+div.nodisplay {
+    display: none;
+}
+
+div.panelpadding {
+    padding-left: 10px;
+    padding-right: 10px;
 }
 
 table.imagetable tbody tr td.Red0{background:-webkit-linear-gradient( #FFFFFF 0%, #FCF7FA 100%); color:#FF0000}

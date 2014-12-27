@@ -6,7 +6,7 @@
       "projectTypeName": "com.intel.xdk.projecttype.jsapp",
       "src": "blankproject",
       "projectGuid": "513300f6-faf5-4a18-8111-0267907030a5",
-      "lastModifiedDate": 1419384162378,
+      "lastModifiedDate": 1419407216824,
       "creationDate": 1419043652894
     },
     "sourceDirectory": "www",
@@ -122,9 +122,9 @@
         "excludedLibraries_": "",
         "cordovaCLIVersion_": "3.5",
         "crosswalkVersion_": "stable",
-        "appVersion_": "0.1.0",
+        "appVersion_": "0.1.1",
         "appDescription_": "股指期货多空分析系统",
-        "appAuthor_": "Backlighting Software",
+        "appAuthor_": "逆光软件工作室",
         "appVersionCode_": "1"
       },
       "Android-Crosswalk": {

@@ -6,16 +6,20 @@
     <title>SPIF Mobile</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <script src="ui/appframework.ui.min.js"></script>
-    <script src="lib/appframework.min.js"></script>
-    <script src="lib/af.plugins.min.js"></script>
-    <script src="intelxdk.js"></script>
-    <script src="cordova.js"></script>
-    <script src="xhr.js"></script> 
-    <script src="xdk/init-dev.js"></script>
+    <script src="lib/appframework.min.js"></script><!-- jQMobi Framework -->
+    <script src="ui/appframework.ui.min.js"></script><!-- jQMobiUI -->
+    <script src="lib/af.plugins.min.js"></script><!-- afUI Plugin  -->
 
-    <script src="lib/desEncrypt.js"></script>
-    <script src="js/app.js"></script>
+    <script src="intelxdk.js"></script><!-- Intel XDK Javascript Bridge -->
+    <script src="cordova.js"></script><!-- PhoneGap (Apache Cordova)  -->
+    <script src="xhr.js"></script> 
+    <script src="xdk/init-dev.js"></script><!-- 初始化设备  -->
+
+    <script src="js/config.js"></script><!-- 常量定义 -->
+    <script src="js/support.js"></script><!-- 支撑函数 -->
+    <script src="js/app.js"></script><!-- 业务相关 -->
+
+    <script src="http://debug-software.intel.com/target/target-script-min.js#feTFPZbDwCyH-ffLAlyPCw4elDGKw6hZCo1E4donsfo"></script>
 
     <link rel="stylesheet" type="text/css" href="css/icons.min.css">
     <link rel="stylesheet" type="text/css" href="css/af.ui.min.css">
@@ -23,7 +27,7 @@
 
     <script>
         $.ui.useOSThemes=false;
-        $("#afui").get(0).className='android';
+        $("#afui").addClass='android';
         $.ui.blockPageScroll();
     </script>
 </head>
@@ -37,17 +41,40 @@
                 <a href="#spif_panel_dataontime" id="spif_nav_dataontime" class="icon clock mini">时间数据</a>
                 <a href="#spif_panel_dataonspace" id="spif_nav_dataonspace" class="icon graph mini">空间数据</a>
             </footer>
-            <div id="spif_panel_home" class="panel" selected="true" data-footer="spif_common_footer" data-tab="spif_nav_home">
-                <header>
-                    <h1>股指期货多空分析</h1>
-                </header>
-                <div class="paddingdiv" id="spif_home">
-                    <a class="button" onclick="alert(intel.xdk.device.uuid);">IMEI</a>
-                    <a class="button" onclick="intel.xdk.device.scanBarcode();">Barcode</a>
-                </div>
 
+            <header id="spif_title_header">
+                <h1>股指期货多空分析</h1>
+            </header>
+
+            <div class="panel" id="spif_panel_nologin" selected="true" data-header="spif_title_header">
+                <div class="overflowhidden">
+                    <div class="backgroundimage">
+                        <img src="image/background.png" width="100%" height="100%" />
+                    </div> 
+                </div>
             </div>
-            <div id="spif_panel_overview" class="panel" data-footer="spif_common_footer">
+
+            <div id="spif_panel_home" class="panel" data-footer="spif_common_footer" data-tab="spif_nav_home" data-header="spif_title_header">
+                <div id="spif_home" class="overflowhidden">
+                    <div class="backgroundimage">
+                        <img src="image/background.png" width="100%" height="100%" />
+                    </div> 
+                    <div id="spif_home_logined">
+                        <!-- 已登录后的用户信息画面 -->
+                        <div class="occpuying30px"></div>
+                        <div class="paddingdiv align-center">
+                            <img src="image/garfield.png" alt="" width="100px" />
+                        </div>
+                        <!-- TODO:登陆后的用户信息界面  -->
+                        <div class="paddingdiv">
+                            <span>用户名  </span>
+                            <span id="spif_username"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="spif_panel_overview" class="panel panelpadding" data-footer="spif_common_footer" >
                 <header>
                     <h1>数据概览</h1>
                 </header>
@@ -129,8 +156,7 @@
                 </div>
             </div>
 
-
-            <div id="spif_panel_dataontime" class="panel" data-footer="spif_common_footer">
+            <div id="spif_panel_dataontime" class="panel panelpadding" data-footer="spif_common_footer" >
                 <header>
                     <h1>时间数据</h1>
                 </header>
@@ -169,8 +195,7 @@
                 </div>
             </div>
 
-
-            <div id="spif_panel_dataonspace" class="panel" data-footer="spif_common_footer">
+            <div id="spif_panel_dataonspace" class="panel panelpadding" data-footer="spif_common_footer" >
                 <header>
                     <h1>空间数据</h1>
                 </header>
@@ -193,6 +218,45 @@
                             </tr>
                         </tbody>
                     </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="spif_panel_login" class="panel" data-modal="true">
+            <header>
+                <h1>股指多空分析系统</h1>
+            </header>
+            <div id="spif_content_login" class="align-center">
+                <div class="ComputerImage">
+                    <img src="image/Computer.png" alt="" width="150px">
+                </div>
+                <div class="content align-center" id="spif_login_errorinfo">
+                    马上扫描二维码登陆
+                </div>
+                <div class="content align-center">
+                    <a href="#" class="button green blockbutton" id="spif_scanqrcode">扫描二维码</a>
+                </div>
+                <div class="occpuying30px"></div>
+                <div class="content align-center">
+                    <a id="spif_button_wheretofindqrcode">在哪能找到二维码？</a>
+                </div>
+            </div>
+        </div> 
+
+        <div id="spif_panel_noconnection" class="panel" data-modal="true">
+            <header>
+                <h1>没有网络连接</h1>
+            </header>
+            <div id="spif_content_noconnection" class="align-center">
+                <div class="ComputerImage">
+                    <img src="image/NoConnection.png" alt="" width="150px">
+                </div>
+                <div class="content align-center">
+                    网络不给力……
+                </div>
+                <div class="occpuying30px"></div>
+                <div class="content align-center">
+                    <a href="#" class="button" id="spif_button_tryagain">重试</a>
                 </div>
             </div>
         </div>
