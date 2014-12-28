@@ -19,7 +19,9 @@
     <script src="js/support.js"></script><!-- 支撑函数 -->
     <script src="js/app.js"></script><!-- 业务相关 -->
 
+    <!--
     <script src="http://debug-software.intel.com/target/target-script-min.js#feTFPZbDwCyH-ffLAlyPCw4elDGKw6hZCo1E4donsfo"></script>
+    -->
 
     <link rel="stylesheet" type="text/css" href="css/icons.min.css">
     <link rel="stylesheet" type="text/css" href="css/af.ui.min.css">
@@ -60,15 +62,18 @@
                         <img src="image/background.png" width="100%" height="100%" />
                     </div> 
                     <div id="spif_home_logined">
-                        <!-- 已登录后的用户信息画面 -->
                         <div class="occpuying30px"></div>
                         <div class="paddingdiv align-center">
-                            <img src="image/garfield.png" alt="" width="100px" />
+                            <img src="image/LeftHash.png" alt="" height="6px" width="50px" class="hash">
+                            <img src="image/garfield.png" alt="" width="80px" />
+                            <img src="image/RightHash.png" alt="" height="6px" width="50px" class="hash">
                         </div>
+                        <div class="occpuying30px"></div>
                         <!-- TODO:登陆后的用户信息界面  -->
-                        <div class="paddingdiv">
-                            <span>用户名  </span>
-                            <span id="spif_username"></span>
+                        <div class="userinfo">
+                            <span id="spif_username">Username</span>
+                            <span class="small" id="spif_expdate">ExpDate</span>
+                            <span class="small" id="spif_poine">Point</span>
                         </div>
                     </div>
                 </div>

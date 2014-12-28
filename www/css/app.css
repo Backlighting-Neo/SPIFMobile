@@ -25,6 +25,7 @@ html {
 body {
     -ms-touch-action: pan-y ;
     -ms-content-zooming: none ;
+    font-family: "Microsoft YaHei"
 }
 
 .align-center {
@@ -166,16 +167,37 @@ div.panelpadding {
     padding-right: 10px;
 }
 
-table.imagetable tbody tr td.Red0{background:-webkit-linear-gradient( #FFFFFF 0%, #FCF7FA 100%); color:#FF0000}
-table.imagetable tbody tr td.Red1{background:-webkit-linear-gradient( #FFFFFF 0%, #FCF1F4 100%); color:#FF0000}
-table.imagetable tbody tr td.Red2{background:-webkit-linear-gradient( #FFFFFF 0%, #FCEBEE 100%); color:#FF0000}
-table.imagetable tbody tr td.Red3{background:-webkit-linear-gradient( #FFFFFF 0%, #FCE5E8 100%); color:#FF0000}
-table.imagetable tbody tr td.Red4{background:-webkit-linear-gradient( #FFFFFF 0%, #FCDFE2 100%); color:#FF0000}
-table.imagetable tbody tr td.Red5{background:-webkit-linear-gradient( #FFFFFF 0%, #FCD9DC 100%); color:#FF0000}
-table.imagetable tbody tr td.Red6{background:-webkit-linear-gradient( #FFFFFF 0%, #FBD3D6 100%); color:#FF0000}
-table.imagetable tbody tr td.Red7{background:-webkit-linear-gradient( #FFFFFF 0%, #FBCDD0 100%); color:#FF0000}
-table.imagetable tbody tr td.Red8{background:-webkit-linear-gradient( #FFFFFF 0%, #FBC8CA 100%); color:#FF0000}
-table.imagetable tbody tr td.Red9{background:-webkit-linear-gradient( #FFFFFF 0%, #FBC2C4 100%); color:#FF0000}
+div.userinfo {
+    font-size: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+div.userinfo span {
+    display: block;
+}
+
+div.userinfo span.small {
+    font-size: 0.8em;
+    margin-top: 20px;
+}
+
+img.hash {
+    margin-bottom: 37px;
+    margin-right: 10px;
+    margin-left: 10px;
+}
+
+table.imagetable tbody tr td.Red0 {background:-webkit-linear-gradient(#FFFFFF 0%, #FCF7FA 100%); color:#FF0000}
+table.imagetable tbody tr td.Red1 {background:-webkit-linear-gradient(#FFFFFF 0%, #FCF1F4 100%); color:#FF0000}
+table.imagetable tbody tr td.Red2 {background:-webkit-linear-gradient(#FFFFFF 0%, #FCEBEE 100%); color:#FF0000}
+table.imagetable tbody tr td.Red3 {background:-webkit-linear-gradient(#FFFFFF 0%, #FCE5E8 100%); color:#FF0000}
+table.imagetable tbody tr td.Red4 {background:-webkit-linear-gradient(#FFFFFF 0%, #FCDFE2 100%); color:#FF0000}
+table.imagetable tbody tr td.Red5 {background:-webkit-linear-gradient(#FFFFFF 0%, #FCD9DC 100%); color:#FF0000}
+table.imagetable tbody tr td.Red6 {background:-webkit-linear-gradient(#FFFFFF 0%, #FBD3D6 100%); color:#FF0000}
+table.imagetable tbody tr td.Red7 {background:-webkit-linear-gradient(#FFFFFF 0%, #FBCDD0 100%); color:#FF0000}
+table.imagetable tbody tr td.Red8 {background:-webkit-linear-gradient(#FFFFFF 0%, #FBC8CA 100%); color:#FF0000}
+table.imagetable tbody tr td.Red9 {background:-webkit-linear-gradient(#FFFFFF 0%, #FBC2C4 100%); color:#FF0000}
 table.imagetable tbody tr td.Red10{background:-webkit-linear-gradient(#FCF7FA 0%, #FBBCBE 100%); color:#FF0000}
 table.imagetable tbody tr td.Red11{background:-webkit-linear-gradient(#FCF1F4 0%, #FBB6B8 100%); color:#FF0000}
 table.imagetable tbody tr td.Red12{background:-webkit-linear-gradient(#FCEBEE 0%, #FAB0B3 100%); color:#FF0000}
@@ -192,16 +214,16 @@ table.imagetable tbody tr td.Red22{background:-webkit-linear-gradient(#FAB0B3 0%
 table.imagetable tbody tr td.Red23{background:-webkit-linear-gradient(#FAAAAD 0%, #F96F71 100%); color:#FF0000}
 table.imagetable tbody tr td.Red24{background:-webkit-linear-gradient(#FAA4A7 0%, #F8696B 100%); color:#FF0000}
 
-table.imagetable tbody tr td.Blue0{background:-webkit-linear-gradient( #FFFFFF 0%, #F5F7FC 100%); color:#0000FF}
-table.imagetable tbody tr td.Blue1{background:-webkit-linear-gradient( #FFFFFF 0%, #EFF2FA 100%); color:#0000FF}
-table.imagetable tbody tr td.Blue2{background:-webkit-linear-gradient( #FFFFFF 0%, #E8EEF8 100%); color:#0000FF}
-table.imagetable tbody tr td.Blue3{background:-webkit-linear-gradient( #FFFFFF 0%, #E2E9F5 100%); color:#0000FF}
-table.imagetable tbody tr td.Blue4{background:-webkit-linear-gradient( #FFFFFF 0%, #DBE5F3 100%); color:#0000FF}
-table.imagetable tbody tr td.Blue5{background:-webkit-linear-gradient( #FFFFFF 0%, #D5E0F1 100%); color:#0000FF}
-table.imagetable tbody tr td.Blue6{background:-webkit-linear-gradient( #FFFFFF 0%, #CEDCEF 100%); color:#0000FF}
-table.imagetable tbody tr td.Blue7{background:-webkit-linear-gradient( #FFFFFF 0%, #C8D7EC 100%); color:#0000FF}
-table.imagetable tbody tr td.Blue8{background:-webkit-linear-gradient( #FFFFFF 0%, #C1D2EA 100%); color:#0000FF}
-table.imagetable tbody tr td.Blue9{background:-webkit-linear-gradient( #FFFFFF 0%, #BBCEE8 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue0 {background:-webkit-linear-gradient(#FFFFFF 0%, #F5F7FC 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue1 {background:-webkit-linear-gradient(#FFFFFF 0%, #EFF2FA 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue2 {background:-webkit-linear-gradient(#FFFFFF 0%, #E8EEF8 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue3 {background:-webkit-linear-gradient(#FFFFFF 0%, #E2E9F5 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue4 {background:-webkit-linear-gradient(#FFFFFF 0%, #DBE5F3 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue5 {background:-webkit-linear-gradient(#FFFFFF 0%, #D5E0F1 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue6 {background:-webkit-linear-gradient(#FFFFFF 0%, #CEDCEF 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue7 {background:-webkit-linear-gradient(#FFFFFF 0%, #C8D7EC 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue8 {background:-webkit-linear-gradient(#FFFFFF 0%, #C1D2EA 100%); color:#0000FF}
+table.imagetable tbody tr td.Blue9 {background:-webkit-linear-gradient(#FFFFFF 0%, #BBCEE8 100%); color:#0000FF}
 table.imagetable tbody tr td.Blue10{background:-webkit-linear-gradient(#F5F7FC 0%, #B4C9E5 100%); color:#0000FF}
 table.imagetable tbody tr td.Blue11{background:-webkit-linear-gradient(#EFF2FA 0%, #AEC5E3 100%); color:#0000FF}
 table.imagetable tbody tr td.Blue12{background:-webkit-linear-gradient(#E8EEF8 0%, #A7C0E1 100%); color:#0000FF}

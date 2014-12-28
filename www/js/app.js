@@ -89,6 +89,9 @@ function spif_Logined(){
 	//拉取用户数据
 	loadJs('setUserInfo',spif_GetURL(spif_config.setUserInfo.url),function(){
 		//TODO:填充用户数据
+		$('spif_username').text(SessionUsername);
+		$('spif_expdate').text('有效期 '+SessionValidateDate);
+		$('spif_point').text('点券 '+SessionPoint);
 		
 	})
 }
